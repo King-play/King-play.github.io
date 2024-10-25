@@ -3,7 +3,7 @@ secondary_name: ""
 navbar_name: "Jiabin Luo's Home Page"
 
 positions:
-  - '<span class="no-break"><img src="assets/images/badges/mpu_master.png" alt="Macao Polytechnic University" class="inline-badge"/></span> M.S., Macao Polytechnic University (2024)'
+  - '<span class="no-break"><img src="assets/images/badges/neu_bs.png" alt="Northeastern University" class="inline-badge"/></span> B.S., Northeastern University (2024)'
 
 email: "luojiabin.poster@foxmail.com"
 gscholar: pXG_5hYAAAAJ
@@ -29,7 +29,7 @@ portrait_caption: >-
 education:
 - name: Peking University
   logo: assets/images/badges/PKU_red.png
-  position: Ph.D in Electronic information(AI)
+  position: Ph.D. in Electronic information(AI)
   date: Sep. 2025 - Jul. 2030
 - name: Northeastern University
   logo: assets/images/badges/neu_bs.png
