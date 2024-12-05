@@ -37,9 +37,9 @@ education:
   date: Sep. 2021 - Jul. 2025
   
 experience:
-- name: Qiyuan.Tech
-  logo: assets/images/badges/qiyuan.png
-  position: CTO, Reasercher
+- name: Zhipu AI
+  logo: assets/images/badges/zhipuai.png
+  position: LLM Reaserch Internship
   date: Oct. 2023 - Now
 - name: HKUST (GZ) 
   logo: assets/images/badges/hkust-gz.png
