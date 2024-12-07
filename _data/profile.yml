@@ -63,10 +63,10 @@ awards:
 - name: <a href="https://www.paddlepaddle.org.cn/ppdemd?n=/ppdemd/%E7%8E%8B%E8%8D%A3%E8%83%9C">Baidu PaddlePaddle Developers Experts</a>
   date: 2021
 
-news:
+service:
 - name: Reviewer of <a href="https://www.embs.org/jbhi/">Journal of Biomedical and Health Informatics (JBHI)</a>
 
 # Feel free to replace the footer text if you would like to, but I will greatly appreciate it 
 # if you keep the link to the template so that more people can benefit from it. Thanks!
 footer_text: >-
-  Copyright © 2024 <a href="https://github.com/King-play" target="_blank">King-play</a>. All Rights Reserved.
+  Copyright © 2024 <a href="https://github.com/King-play" target="_blank">Jiabin Luo</a>. All Rights Reserved.
