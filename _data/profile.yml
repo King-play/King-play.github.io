@@ -60,10 +60,10 @@ awards:
   date: 2023
 - name: Outstanding Award of IEEE UV 2022 "Vision Meets Algae" Object Detection Challenge
   date: 2022
-- name: <a href="https://www.paddlepaddle.org.cn/ppdemd?n=/ppdemd/%E7%8E%8B%E8%8D%A3%E8%83%9C">Baidu PaddlePaddle Developers Experts</a>
-  date: 2021
+#- name: <a href="https://www.paddlepaddle.org.cn/ppdemd?n=/ppdemd/%E7%8E%8B%E8%8D%A3%E8%83%9C">Baidu PaddlePaddle Developers Experts</a>
+ # date: 2021
 
-service:
+🔥news:
 - name: Reviewer of <a href="https://www.embs.org/jbhi/">Journal of Biomedical and Health Informatics (JBHI)</a>
 
 # Feel free to replace the footer text if you would like to, but I will greatly appreciate it 
