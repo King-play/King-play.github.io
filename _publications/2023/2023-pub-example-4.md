@@ -6,11 +6,6 @@ pub:            "2023 International Conference on Computer Vision, Image and Dee
 pub_last:       ' <span class="badge badge-pill badge-custom badge-secondary">Conference</span>'
 pub_date:       "2023"
 abstract: >-
-  <!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Justified Text Example</title>
 <style>
   .justified-text {
