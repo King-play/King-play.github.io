@@ -2,7 +2,7 @@
 title:          Research on Image Recognition based on Reinforcement Learning
 date:           2023-08-22 00:01:00 +0800
 selected:       false
-pub:            "2023 International Conference on Computer Vision, Image and Deep Learning"
+pub:            "International Conference on Computer Vision, Image and Deep Learning"
 pub_last:       ' <span class="badge badge-pill badge-custom badge-secondary">Conference</span>'
 pub_date:       "2023"
 abstract: >-
