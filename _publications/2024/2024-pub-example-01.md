@@ -9,7 +9,7 @@ pub_last:       ' <span class="badge badge-pill badge-custom badge-secondary">Co
 pub_date:       "2024"
 
 abstract: >-
-  In response to the persistent safety challenges within coal mines, this study proposes a novel approach integrating a three-layer feedforward backpropagation artificial neural network with a genetic algorithm (GA-BP) for establishing a safety early warning system. Focused on a coal mine in Shandong, China, the model's effectiveness is evaluated using relevant data for training and analysis. Results indicate the superiority of the GA-BP model over traditional BP neural networks, offering enhanced capability for identifying potential safety risks promptly. This advancement enables coal mine management to implement timely interventions, ensuring the safety of miners. The findings present valuable insights for engineering applications in similar contexts.
+   In response to the persistent safety challenges within coal mines, this study proposes a novel approach integrating a three-layer feedforward backpropagation artificial neural network with a genetic algorithm (GA-BP) for establishing a safety early warning system. Focused on a coal mine in Shandong, China, the model's effectiveness is evaluated using relevant data for training and analysis. Results indicate the superiority of the GA-BP model over traditional BP neural networks, offering enhanced capability for identifying potential safety risks promptly. This advancement enables coal mine management to implement timely interventions, ensuring the safety of miners. The findings present valuable insights for engineering applications in similar contexts.
   
 cover:          assets/images/covers/luo2024ICIC.png
 authors:
