@@ -6,7 +6,13 @@ pub:            "2023 International Conference on Computer Vision, Image and Dee
 pub_last:       ' <span class="badge badge-pill badge-custom badge-secondary">Conference</span>'
 pub_date:       "2023"
 abstract: >-
-  In this paper, we propose a novel image recognition method to identify the objectives and obtain the policy gradients for decreasing orders. Furthermore, we compare our proposed models with existing traditional machine learning methods to evaluate the performance of recognition accuracy. From our extensive experimental results, we can conclude that our proposed methods can achieve the subjective detection from numerous images data-set with reasonable computation costs.
+ <table>
+  <tr>
+    <td>
+      In this paper, we propose a novel image recognition method to identify the objectives and obtain the policy gradients for decreasing orders. Furthermore, we compare our proposed models with existing traditional machine learning methods to evaluate the performance of recognition accuracy. From our extensive experimental results, we can conclude that our proposed methods can achieve the subjective detection from numerous images data-set with reasonable computation costs.
+    </td>
+  </tr>
+</table>
 
 cover:          assets/images/covers/CVIDL2023.png
 authors:
