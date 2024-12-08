@@ -2,7 +2,7 @@
 title:          Coal Mine Safety Alert System： Refining BP Neural Network with Genetic Algorithm Optimization
 date:           2024-06-22 00:01:00 +0800
 selected:       true
-pub:            "ICIC 2024"
+pub:            "International Conference On Intelligent Computing"
 # pub_pre:        "Submitted to "
 # pub_post:       'Under review.'
 pub_last:       ' <span class="badge badge-pill badge-custom badge-secondary">Conference</span><span class="badge badge-pill badge-custom badge-warning">Poster</span>'
