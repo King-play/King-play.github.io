@@ -5,7 +5,7 @@ selected:       true
 pub:            "International Conference On Intelligent Computing"
 # pub_pre:        "Submitted to "
 # pub_post:       'Under review.'
-pub_last:       ' <span class="badge badge-pill badge-custom badge-secondary">Conference<(CCF-C)/span><span class="badge badge-pill badge-custom badge-warning">Poster</span>'
+pub_last:       ' <span class="badge badge-pill badge-custom badge-secondary">Conference(CCF-C)</span><span class="badge badge-pill badge-custom badge-warning">Poster</span>'
 pub_date:       "2024"
 
 abstract: >-
