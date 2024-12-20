@@ -27,21 +27,22 @@
 
 <style>
 .news-container {
-    margin-top: 1rem;
-    margin-bottom: 1rem;
+    margin: 1rem auto;
     background-color: #fff;
     box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
     border-radius: 0.2rem;
+    max-width: 100%;
 }
 
 .news-title {
     border-bottom: 1px solid #e9ecef;
     border-color: #ced4da;
+    padding: 1rem;
+    font-size: 1.25rem;
 }
 
 .news-list {
-    padding-left: 0;
-    list-style: none;
+    padding: 0 1rem;
 }
 
 .news-year {
@@ -54,8 +55,7 @@
 }
 
 .year {
-    margin-top: 1rem;
-    margin-bottom: 1rem;
+    font-size: 1rem;
     color: #6c757d;
 }
 
@@ -67,13 +67,16 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 0.5rem 0;
 }
 
 .title {
     flex-grow: 1;
+    font-size: 1rem;
 }
 
 .date {
+    font-size: 0.875rem;
     color: #6c757d;
     text-align: right;
 }
@@ -93,5 +96,36 @@
 .fa-fw {
     text-align: center;
     width: 1.25em;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .news-title {
+        font-size: 1rem;
+    }
+
+    .year, .title, .date {
+        font-size: 0.875rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .news-year {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .media-left {
+        margin-bottom: 0.5rem;
+    }
+
+    .news-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .date {
+        text-align: left;
+    }
 }
 </style>
