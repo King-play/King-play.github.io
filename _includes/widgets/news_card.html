@@ -1,22 +1,17 @@
 {% assign news_by_year = site.news | sort: "date" | reverse | slice: 0, include.limit | group_by_exp: "item", "item.date | date: '%Y'" -%}
 
-<div class="news-container my-3 bg-white shadow-sm rounded-sm">
-    <h6 class="news-title p-3 mb-0 border-bottom border-gray d-flex align-items-center">
-        <i class="fas fa-rss fa-fw mr-2"></i> News
-    </h6>
-    <div class="news-list px-3 pb-1">
+<div class="my-3 bg-white shadow-sm rounded-sm">
+    <h6 class="p-3 mb-0 border-bottom border-gray"><i class="fas fa-rss"></i> News</h6>
+    <div class="px-3 pb-1">
         {% for year in news_by_year %}
-        <div class="news-year media py-2 {% if forloop.first == false %}border-top border-gray{% endif %}">
-            <div class="media-left mr-3">
-                <div class="year text-muted my-1">{{ year.name }}</div>
-            </div>
+        <div class="media py-1 {% if not_first -%}border-top border-gray{%- endif %}">
+            {% assign not_first = true %}
+            <div class="mr-3 text-muted my-1">{{ year.name }}</div>
             <div class="media-body">
                 {% for item in year.items %}
-                <div class="news-item my-1 d-flex justify-content-between align-items-center">
-                    <div class="title flex-grow-1">{{ item.title }}</div>
-                    <div class="date text-muted text-right">
-                        <i>{{ item.date | date: "%b %d" }}</i>
-                    </div>
+                <div class="my-1 d-flex">
+                    <div>{{ item.title }}</div>
+                    <div class="ml-auto mt-auto text-muted no-break"><i>{{ item.date | date: "%b %d" }}</i></div>
                 </div>
                 {% endfor %}
             </div>
@@ -24,108 +19,3 @@
         {% endfor %}
     </div>
 </div>
-
-<style>
-.news-container {
-    margin: 1rem auto;
-    background-color: #fff;
-    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
-    border-radius: 0.2rem;
-    max-width: 100%;
-}
-
-.news-title {
-    border-bottom: 1px solid #e9ecef;
-    border-color: #ced4da;
-    padding: 1rem;
-    font-size: 1.25rem;
-}
-
-.news-list {
-    padding: 0 1rem;
-}
-
-.news-year {
-    display: flex;
-    align-items: flex-start;
-}
-
-.media-left {
-    flex: 0 0 auto;
-}
-
-.year {
-    font-size: 1rem;
-    color: #6c757d;
-}
-
-.media-body {
-    flex: 1;
-}
-
-.news-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0.5rem 0;
-}
-
-.title {
-    flex-grow: 1;
-    font-size: 1rem;
-}
-
-.date {
-    font-size: 0.875rem;
-    color: #6c757d;
-    text-align: right;
-}
-
-.border-top {
-    border-top: 1px solid #e9ecef;
-}
-
-.border-gray {
-    border-color: #ced4da;
-}
-
-.fas {
-    font-size: 1rem;
-}
-
-.fa-fw {
-    text-align: center;
-    width: 1.25em;
-}
-
-/* 响应式设计 */
-@media (max-width: 768px) {
-    .news-title {
-        font-size: 1rem;
-    }
-
-    .year, .title, .date {
-        font-size: 0.875rem;
-    }
-}
-
-@media (max-width: 576px) {
-    .news-year {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .media-left {
-        margin-bottom: 0.5rem;
-    }
-
-    .news-item {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .date {
-        text-align: left;
-    }
-}
-</style>
