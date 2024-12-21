@@ -67,5 +67,5 @@ img.lazy {
 #news-section h6 {
     position: absolute; /* 绝对定位标题 */
     top: -50px; /* 将标题向上移动，使其不占据空间 */
-    visibility: hidden; /* 隐藏标题，但保持其在文档流中的位置 */
+    margin-top: -60px; /* 与外部容器的 padding-top 相等 */
 }
