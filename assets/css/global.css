@@ -59,3 +59,13 @@ img.lazy {
     font-family: Courier, monospace;
 }
 
+#news-section {
+    position: relative; /* 确保这个容器是相对定位的 */
+    padding-top: 60px; /* 增加上边距，确保锚点定位在标题上方 */
+}
+
+#news-section h6 {
+    position: absolute; /* 绝对定位标题 */
+    top: -50px; /* 将标题向上移动，使其不占据空间 */
+    visibility: hidden; /* 隐藏标题，但保持其在文档流中的位置 */
+}
