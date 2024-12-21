@@ -4,6 +4,6 @@ pages:
 - name: About Me
   url: ./
 - name: News
-  url: ./#news-section
+  url: news
 - name: Publications
   url: publications
