@@ -58,12 +58,3 @@ img.lazy {
 .email-text {
     font-family: Courier, monospace;
 }
-
-#news-section {
-    padding-top: 60px; /* 增加上边距，确保锚点定位在标题上方 */
-}
-
-#news-section h6 {
-    margin-top: -60px; /* 将标题向下移动，以抵消上边距 */
-    padding-top: 60px; /* 增加上内边距，以保持标题可见 */
-}
