@@ -10,13 +10,12 @@ num_selected: 10
 {% include widgets/experience_card.html %}
 {% endif %}
 
-<div id="news">
+
 {% if site.data.display.homepage.show_news %}
     {% assign count_news = site.news | size %}
     {% if count_news > 0 %}
-  
+      <div id="news"></div>
         {% include widgets/news_card.html limit=site.data.display.homepage.num_news %}
-      </div>
     {% endif %}
 {% endif %}
 
