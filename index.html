@@ -13,7 +13,7 @@ num_selected: 10
 {% if site.data.display.homepage.show_news %}
     {% assign count_news = site.news | size %}
     {% if count_news > 0 %}
-    <h6 id="news-section" class="p-3 mb-0 border-bottom border-gray">🔥News</h6>
+    <div id="news-section"></div>
         {% include widgets/news_card.html limit=site.data.display.homepage.num_news %}
     {% endif %}
 {% endif %}
