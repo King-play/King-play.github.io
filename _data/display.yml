@@ -2,5 +2,4 @@ homepage:
   show_experience: true
   show_news: true
   show_selected_publications: true
-  num_selected_publications: 5 
   num_news: 10
