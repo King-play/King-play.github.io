@@ -19,9 +19,11 @@ zhihu: 4-92-83-33-21
 # orcid: 0000-0000-0000-0000
 
 short_bio: >-
-  <p style="text-align: justify;">
-  I am Jiabin Luo(罗嘉滨), I used to study at Northeastern University (NEU) and work under the supervision of Prof.<a href="https://graduate.neuq.edu.cn/info/1148/2849.htm">Chao Liu</a>. My research interests are AI systems, LLM, trusted LLM, RAG, and AI safety. I am also interested in generative data research. In 2025, I will start my PhD studies at Peking University. <br> I publish a lot of open source projects on <a href="https://github.com/King-play">Github</a>  <img alt="GitHub User's stars" src="https://img.shields.io/github/stars/king-play?style=flat-square">.Welcome colleagues who are interested in cooperating to contact me!I will check my email periodically, so please be patient if you don't receive a prompt reply. Thank you!
-</p>
+  | Left aligned | Right aligned |
+|--------------|--------------|
+| I am Jiabin Luo(罗嘉滨), I used to study at Northeastern University (NEU) and work under the supervision of Prof.[Chao Liu](https://graduate.neuq.edu.cn/info/1148/2849.htm). | My research interests are AI systems, LLM, trusted LLM, RAG, and AI safety. |
+| I am also interested in generative data research. In 2025, I will start my PhD studies at Peking University. | I publish a lot of open source projects on [Github](https://github.com/King-play). |
+| Welcome colleagues who are interested in cooperating to contact me! I will check my email periodically, so please be patient if you don't receive a prompt reply. Thank you! |  |
 
 show_portrait: true
 portrait_url: assets/images/photos/profile_ljb.jpg
