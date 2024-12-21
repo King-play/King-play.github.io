@@ -60,12 +60,10 @@ img.lazy {
 }
 
 #news-section {
-    position: relative; /* 确保这个容器是相对定位的 */
     padding-top: 60px; /* 增加上边距，确保锚点定位在标题上方 */
 }
 
 #news-section h6 {
-    position: absolute; /* 绝对定位标题 */
-    top: -50px; /* 将标题向上移动，使其不占据空间 */
-    margin-top: -60px; /* 与外部容器的 padding-top 相等 */
+    margin-top: -60px; /* 将标题向下移动，以抵消上边距 */
+    padding-top: 60px; /* 增加上内边距，以保持标题可见 */
 }
