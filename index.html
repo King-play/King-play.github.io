@@ -14,6 +14,7 @@ num_selected: 10
     {% assign count_news = site.news | size %}
     {% if count_news > 0 %}
     <div id="news-section"></div>
+        <h6 class="p-3 mb-0 border-bottom border-gray">🔥News</h6>
         {% include widgets/news_card.html limit=site.data.display.homepage.num_news %}
     {% endif %}
 {% endif %}
