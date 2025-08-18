@@ -5,7 +5,7 @@ selected:       true
 pub:            "Sustainable Computing: Informatics and Systems"
 # pub_pre:        "Submitted to "
 # pub_post:       'Under review.'
-pub_last:       ' <span class="badge badge-pill badge-custom badge-secondary">Journal(SCI Q1, Impact Factor:5.7)</span><span class="badge badge-pill badge-custom badge-warning">Regular Issue</span>'
+pub_last:       ' <span class="badge badge-pill badge-custom badge-secondary">Journal(SCI Q1, Impact Factor:5.7)</span><span class="badge badge-pill badge-custom badge-warning">Full Paper</span>'
 pub_date:       "2025"
 
 abstract: >-
