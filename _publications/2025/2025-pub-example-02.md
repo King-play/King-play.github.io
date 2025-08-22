@@ -4,8 +4,8 @@ date:           2025-08-20 00:01:00 +0800
 selected:       true
 # pub:            "AAAI2025"
 # pub_pre:        "Submitted to "
-# pub_post:       'Under review.'
-pub_last:       ' <span class="badge badge-pill badge-custom badge-secondary">Journal(SCI Q1, Impact Factor:5.7)</span><span class="badge badge-pill badge-custom badge-warning">Full Paper</span>'
+pub_post:       'Under review.'
+# pub_last:       ' <span class="badge badge-pill badge-custom badge-secondary">Journal(SCI Q1, Impact Factor:5.7)</span><span class="badge badge-pill badge-custom badge-warning">Full Paper</span>'
 pub_date:       "2025"
 
 abstract: >-
