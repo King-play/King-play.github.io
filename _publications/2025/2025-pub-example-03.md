@@ -9,7 +9,7 @@ pub_post:       'Accepted.'
 pub_date:       "2025"
 
   
-cover:          assets/images/covers/aixiv.png
+cover:          assets/images/covers/FBDS.jpg
 authors:
   - Yixuan Zhang
   - Jiabin Luo
