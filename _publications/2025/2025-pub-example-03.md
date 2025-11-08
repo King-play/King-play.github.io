@@ -6,7 +6,7 @@ pub:            The 40th Annual AAAI Conference on Artificial Intelligence
 # pub_pre:        "Submitted to "
 # pub_post:       'Accepted.'
 pub_last:       ' <span class="badge badge-pill badge-custom badge-secondary">Conference(CCF-A)</span><span class="badge badge-pill badge-custom badge-warning">Poster</span>'
-pub_date:       "2025"
+pub_date:       "2026"
 
   
 cover:          assets/images/covers/FBDS.jpg
