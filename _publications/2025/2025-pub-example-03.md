@@ -11,11 +11,11 @@ pub_date:       "2026"
   
 cover:          assets/images/covers/FBDS.jpg
 authors:
-  - Yixuan Zhang
-  - Jiabin Luo
-  - Zhenggang Wang
-  - Feng Zhou
-  - Quyu Kong
+  - "Yixuan Zhang*"
+  - "Jiabin Luo*"
+  - "Zhenggang Wang"
+  - "Feng Zhou"
+  - "Quyu Kong"
 
 links:
   Paper: https://arxiv.org/abs/2511.07032
