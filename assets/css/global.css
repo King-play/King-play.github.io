@@ -59,39 +59,3 @@ img.lazy {
     font-family: Courier, monospace;
 }
 
-/* NEWS 滚动窗口 */
-.news-panel {
-  max-height: 180px;      /* 窗口高度，你可以自己调，比如 150 / 200 都行 */
-  overflow-y: auto;       /* 竖直方向可滚动 */
-  padding-right: 4px;     /* 给滚动条留一点空间 */
-}
-
-/* 可选：稍微美化一下滚动条（支持 WebKit 内核） */
-.news-panel::-webkit-scrollbar {
-  width: 6px;
-}
-
-.news-panel::-webkit-scrollbar-thumb {
-  border-radius: 3px;
-}
-
-/* NEWS 列表基础样式 */
-.news-list {
-  margin: 0;
-  padding-left: 1.2rem;
-  list-style-type: disc;
-}
-
-.news-item {
-  margin-bottom: 0.3rem;
-}
-
-.news-date {
-  font-weight: 600;
-  margin-right: 0.4rem;
-  white-space: nowrap;
-}
-
-.news-text {
-  display: inline;
-}
