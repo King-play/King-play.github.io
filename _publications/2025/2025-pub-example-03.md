@@ -17,5 +17,7 @@ authors:
   - Feng Zhou
   - Quyu Kong
 
+links:
+  Paper: https://arxiv.org/abs/2511.07032
 
 ---
