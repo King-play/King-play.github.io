@@ -36,4 +36,5 @@ authors:
   - Xinyu Liu
 links:
   Paper: https://arxiv.org/pdf/2508.15126
+  Code: https://github.com/co234/FairBADS
 ---
