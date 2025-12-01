@@ -19,5 +19,6 @@ authors:
 
 links:
   Paper: https://arxiv.org/abs/2511.07032
+  Code: https://github.com/co234/FairBADS
 
 ---
