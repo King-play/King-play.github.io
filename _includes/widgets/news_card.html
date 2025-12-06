@@ -1,23 +1,40 @@
 {% assign news_by_year = site.news | sort: "date" | reverse | slice: 0, include.limit | group_by_exp: "item", "item.date | date: '%Y'" -%}
 
-<div class="my-3 bg-white shadow-sm rounded-sm">
-    <h6 class="p-3 mb-0 border-bottom border-gray d-flex align-items-center">
-        <span>🔥 News</span>
-        {% if site.news and site.news.size > 0 %}
-        <span class="ml-auto text-muted small">Latest {{ include.limit | default: site.news.size }}</span>
-        {% endif %}
-    </h6>
+<div class="my-3 bg-white shadow-sm rounded-sm news-card">
+    <!-- 头部：标题 + 上下滚动按钮 -->
+    <div class="news-card-header p-3 mb-0 border-bottom border-gray d-flex align-items-center">
+        <div class="d-flex align-items-center">
+            <span class="mr-2">🔥</span>
+            <span class="font-weight-bold">News</span>
+        </div>
 
-    <!-- 可滚动区域外壳 -->
+        <div class="ml-auto d-flex align-items-center">
+            {% if site.news and site.news.size > 0 %}
+            <span class="text-muted small mr-2">
+                Latest {{ include.limit | default: site.news.size }}
+            </span>
+            {% endif %}
+            <div class="btn-group btn-group-sm" role="group" aria-label="Scroll news">
+                <button type="button" class="btn btn-light news-scroll-btn news-scroll-up" title="Scroll up">
+                    ▲
+                </button>
+                <button type="button" class="btn btn-light news-scroll-btn news-scroll-down" title="Scroll down">
+                    ▼
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 可滚动区域 -->
     <div class="px-3 pb-2">
-        <div class="news-scroll-window">
+        <div class="news-scroll-window" id="news-scroll-window">
             {% assign not_first = false %}
             {% for year in news_by_year %}
             <div class="media py-2 {% if not_first %}border-top border-light{% endif %}">
                 {% assign not_first = true %}
                 <!-- 年份标签 -->
                 <div class="mr-3 my-1">
-                    <span class="badge badge-light border text-muted small px-2 py-1">
+                    <span class="badge badge-pill news-year-badge">
                         {{ year.name }}
                     </span>
                 </div>
@@ -41,18 +58,30 @@
             </div>
             {% endfor %}
         </div>
-    </div>
+    </div> 
 </div>
 
 <style>
-/* ===== News 滚动窗口样式 ===== */
-.news-scroll-window {
-    max-height: 230px;          /* 控制可视高度，按需要调，比如 200~280 都可以 */
-    overflow-y: auto;
-    padding-right: 4px;         /* 给滚动条留一点空间 */
+/* ===== News 卡片整体 ===== */
+.news-card {
+    border-radius: 0.6rem;
+    border: 1px solid #f1f3f5;
+    overflow: hidden;
 }
 
-/* 年份下每一条 news 的小圆点 */
+/* 头部背景 + 轻微渐变，贴合原主题 */
+.news-card-header {
+    background: linear-gradient(90deg, #ffffff 0%, #f8f9fa 50%, #ffffff 100%);
+}
+
+/* ===== 滚动窗口 ===== */
+.news-scroll-window {
+    max-height: 240px;          /* 控制可视高度，可根据感觉改，比如 220~280 */
+    overflow-y: auto;
+    padding-right: 4px;
+}
+
+/* 每条 news 前面的小圆点 + 对齐 */
 .news-item-row {
     position: relative;
     padding-left: 0.75rem;
@@ -67,7 +96,15 @@
     flex-shrink: 0;
 }
 
-/* 标题和日期的细节 */
+/* 年份 badge */
+.news-year-badge {
+    background-color: #f8f9fa;
+    border: 1px solid #e9ecef;
+    color: #6c757d;
+    font-size: 0.75rem;
+}
+
+/* 文本细节 */
 .news-item-title {
     font-size: 0.9rem;
     line-height: 1.35;
@@ -77,10 +114,34 @@
     font-size: 0.8rem;
 }
 
-/* 小屏幕时稍微紧凑一点 */
+/* 上下滚动按钮：圆形小按钮 */
+.news-scroll-btn {
+    width: 26px;
+    height: 26px;
+    border-radius: 999px;
+    padding: 0;
+    line-height: 1;
+    font-size: 0.8rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-color: #e9ecef;
+    box-shadow: none !important;
+}
+
+.news-scroll-btn:hover {
+    background-color: #f1f3f5;
+    border-color: #dee2e6;
+}
+
+.news-scroll-btn:active {
+    background-color: #e9ecef;
+}
+
+/* 小屏幕适配 */
 @media (max-width: 576px) {
     .news-scroll-window {
-        max-height: 200px;
+        max-height: 210px;
     }
     .news-item-title {
         font-size: 0.85rem;
@@ -90,7 +151,7 @@
     }
 }
 
-/* 自定义一下滚动条（只对支持 webkit 的浏览器有效，别的浏览器会退化为默认滚动条） */
+/* 自定义一下滚动条（WebKit） */
 .news-scroll-window::-webkit-scrollbar {
     width: 6px;
 }
@@ -105,3 +166,34 @@
     background-color: #ced4da;
 }
 </style>
+
+<script>
+(function () {
+  var container = document.getElementById('news-scroll-window');
+  if (!container) return;
+
+  var upBtn = document.querySelector('.news-scroll-up');
+  var downBtn = document.querySelector('.news-scroll-down');
+  var step = 80; // 每次滚动的高度（px），可按需要调大/调小
+
+  function smoothScroll(delta) {
+    if ('scrollBy' in container) {
+      container.scrollBy({ top: delta, left: 0, behavior: 'smooth' });
+    } else {
+      // 兼容极老浏览器：无动画滚动
+      container.scrollTop += delta;
+    }
+  }
+
+  if (upBtn) {
+    upBtn.addEventListener('click', function () {
+      smoothScroll(-step);
+    });
+  }
+  if (downBtn) {
+    downBtn.addEventListener('click', function () {
+      smoothScroll(step);
+    });
+  }
+})();
+</script>
