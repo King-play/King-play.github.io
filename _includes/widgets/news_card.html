@@ -1,190 +1,107 @@
+{% assign news_by_year = site.news | sort: "date" | reverse | slice: 0, include.limit | group_by_exp: "item", "item.date | date: '%Y'" -%}
 
+<div class="my-3 bg-white shadow-sm rounded-sm">
+    <h6 class="p-3 mb-0 border-bottom border-gray d-flex align-items-center">
+        <span>🔥 News</span>
+        {% if site.news and site.news.size > 0 %}
+        <span class="ml-auto text-muted small">Latest {{ include.limit | default: site.news.size }}</span>
+        {% endif %}
+    </h6>
 
-{% assign news = site.news | sort: "date" | reverse | slice: 0, include.limit -%}
+    <!-- 可滚动区域外壳 -->
+    <div class="px-3 pb-2">
+        <div class="news-scroll-window">
+            {% assign not_first = false %}
+            {% for year in news_by_year %}
+            <div class="media py-2 {% if not_first %}border-top border-light{% endif %}">
+                {% assign not_first = true %}
+                <!-- 年份标签 -->
+                <div class="mr-3 my-1">
+                    <span class="badge badge-light border text-muted small px-2 py-1">
+                        {{ year.name }}
+                    </span>
+                </div>
 
-###### News
-
-<div class="news-slider-wrapper">
-  <div class="news-slider" id="news-slider">
-    {% for item in news %}
-    <div class="news-slide{% if forloop.first %} news-slide-active{% endif %}">
-      <div class="news-slide-date">
-        {{ item.date | date: "%Y · %b %d" }}
-      </div>
-      <div class="news-slide-title">
-        {{ item.title }}
-      </div>
+                <!-- 该年的所有 news -->
+                <div class="media-body">
+                    {% for item in year.items %}
+                    <div class="my-1 d-flex align-items-baseline news-item-row">
+                        <div class="news-item-dot"></div>
+                        <div class="flex-grow-1">
+                            <div class="news-item-title">
+                                {{ item.title }}
+                            </div>
+                        </div>
+                        <div class="ml-2 mt-auto text-muted no-break news-item-date">
+                            <i>{{ item.date | date: "%b %d" }}</i>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
     </div>
-    {% endfor %}
-  </div>
-
-  {% if news.size > 1 %}
-  <div class="news-slider-controls">
-    <button class="news-slider-btn news-slider-prev" type="button" aria-label="Previous news">&#10094;</button>
-    <div class="news-slider-dots">
-      {% for item in news %}
-      <span class="news-slider-dot{% if forloop.first %} active{% endif %}" data-index="{{ forloop.index0 }}"></span>
-      {% endfor %}
-    </div>
-    <button class="news-slider-btn news-slider-next" type="button" aria-label="Next news">&#10095;</button>
-  </div>
-  {% endif %}
 </div>
 
 <style>
-/* === News slider styles === */
-.news-slider-wrapper {
-  margin-top: 0.5rem;
-  margin-bottom: 1.5rem;
-  position: relative;
+/* ===== News 滚动窗口样式 ===== */
+.news-scroll-window {
+    max-height: 230px;          /* 控制可视高度，按需要调，比如 200~280 都可以 */
+    overflow-y: auto;
+    padding-right: 4px;         /* 给滚动条留一点空间 */
 }
 
-.news-slider {
-  position: relative;
-  min-height: 3.5rem;
+/* 年份下每一条 news 的小圆点 */
+.news-item-row {
+    position: relative;
+    padding-left: 0.75rem;
 }
 
-.news-slide {
-  position: absolute;
-  inset: 0;
-  opacity: 0;
-  transform: translateX(8px);
-  transition: opacity .25s ease, transform .25s ease;
+.news-item-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 999px;
+    background-color: #ced4da;
+    margin-right: 0.4rem;
+    flex-shrink: 0;
 }
 
-.news-slide.news-slide-active {
-  opacity: 1;
-  transform: translateX(0);
-  position: relative;
+/* 标题和日期的细节 */
+.news-item-title {
+    font-size: 0.9rem;
+    line-height: 1.35;
 }
 
-.news-slide-date {
-  font-size: 0.8rem;
-  color: #6c757d;
-  margin-bottom: 0.15rem;
+.news-item-date {
+    font-size: 0.8rem;
 }
 
-.news-slide-title {
-  font-size: 0.95rem;
-  line-height: 1.4;
+/* 小屏幕时稍微紧凑一点 */
+@media (max-width: 576px) {
+    .news-scroll-window {
+        max-height: 200px;
+    }
+    .news-item-title {
+        font-size: 0.85rem;
+    }
+    .news-item-date {
+        font-size: 0.75rem;
+    }
 }
 
-/* 控制区 */
-.news-slider-controls {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: .5rem;
-  margin-top: 0.4rem;
+/* 自定义一下滚动条（只对支持 webkit 的浏览器有效，别的浏览器会退化为默认滚动条） */
+.news-scroll-window::-webkit-scrollbar {
+    width: 6px;
 }
-
-.news-slider-btn {
-  border: none;
-  background: transparent;
-  cursor: pointer;
-  font-size: 1.0rem;
-  line-height: 1;
-  padding: 0 .3rem;
-  user-select: none;
+.news-scroll-window::-webkit-scrollbar-track {
+    background: transparent;
 }
-
-.news-slider-btn:focus {
-  outline: none;
+.news-scroll-window::-webkit-scrollbar-thumb {
+    background-color: #dee2e6;
+    border-radius: 999px;
 }
-
-.news-slider-dots {
-  display: flex;
-  align-items: center;
-  gap: .3rem;
-}
-
-.news-slider-dot {
-  width: 6px;
-  height: 6px;
-  border-radius: 999px;
-  background-color: #dee2e6;
-  display: inline-block;
-  cursor: pointer;
-}
-
-.news-slider-dot.active {
-  width: 14px;
-  background-color: #343a40;
-}
-
-/* 减少动画模式 */
-@media (prefers-reduced-motion: reduce) {
-  .news-slide {
-    transition: none;
-  }
+.news-scroll-window::-webkit-scrollbar-thumb:hover {
+    background-color: #ced4da;
 }
 </style>
-
-<script>
-(function () {
-  var container = document.getElementById('news-slider');
-  if (!container) return;
-  var slides = container.querySelectorAll('.news-slide');
-  if (!slides.length) return;
-
-  var dots = document.querySelectorAll('.news-slider-dot');
-  var prevBtn = document.querySelector('.news-slider-prev');
-  var nextBtn = document.querySelector('.news-slider-next');
-  var index = 0;
-
-  function show(i) {
-    if (!slides.length) return;
-    index = (i + slides.length) % slides.length;
-    for (var k = 0; k < slides.length; k++) {
-      var active = (k === index);
-      slides[k].classList.toggle('news-slide-active', active);
-      if (dots[k]) dots[k].classList.toggle('active', active);
-    }
-  }
-
-  if (prevBtn) {
-    prevBtn.addEventListener('click', function () {
-      show(index - 1);
-    });
-  }
-
-  if (nextBtn) {
-    nextBtn.addEventListener('click', function () {
-      show(index + 1);
-    });
-  }
-
-  // dot 点击跳转
-  if (dots && dots.length) {
-    if (dots.forEach) {
-      dots.forEach(function (dot, i) {
-        dot.addEventListener('click', function () { show(i); });
-      });
-    } else {
-      // 兼容旧浏览器
-      Array.prototype.forEach.call(dots, function (dot, i) {
-        dot.addEventListener('click', function () { show(i); });
-      });
-    }
-  }
-
-  // 自动轮播（鼠标移入暂停）
-  var timerId;
-  function startAuto() {
-    if (timerId) return;
-    timerId = setInterval(function () {
-      show(index + 1);
-    }, 8000); // 8 秒一条
-  }
-  function stopAuto() {
-    if (timerId) {
-      clearInterval(timerId);
-      timerId = null;
-    }
-  }
-
-  startAuto();
-  container.addEventListener('mouseenter', stopAuto);
-  container.addEventListener('mouseleave', startAuto);
-})();
-</script>
