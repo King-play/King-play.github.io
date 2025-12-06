@@ -83,22 +83,6 @@
     position: relative;         /* 改进点 1：为时间线竖线做定位 */
 }
 
-/* 时间线竖线（改进点 1） */
-.news-scroll-window::before {
-    content: "";
-    position: absolute;
-    left: 13px;                 /* 和小圆点大致对齐，可微调 */
-    top: 6px;
-    bottom: 6px;
-    width: 2px;
-    background: linear-gradient(
-        to bottom,
-        rgba(222, 226, 230, 0.0),
-        rgba(222, 226, 230, 0.9),
-        rgba(222, 226, 230, 0.0)
-    );
-    pointer-events: none;
-}
 
 /* 每条 news 前面的小圆点 + 对齐 */
 .news-item-row {
