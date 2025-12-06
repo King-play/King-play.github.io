@@ -7,12 +7,12 @@ pub:            The 40th Annual AAAI Conference on Artificial Intelligence
 # pub_post:       'Accepted.'
 pub_last:       ' <span class="badge badge-pill badge-custom badge-secondary">Conference(CCF-A)</span><span class="badge badge-pill badge-custom badge-warning">Poster</span>'
 pub_date:       "2026"
-author_note: "*Equal Contribution"
+
   
 cover:          assets/images/covers/FBDS.jpg
 authors:
-  - "Yixuan Zhang*"
-  - "Jiabin Luo*"
+  - Yixuan Zhang*
+  - Jiabin Luo*
   - Zhenggang Wang
   - Feng Zhou
   - Quyu Kong
